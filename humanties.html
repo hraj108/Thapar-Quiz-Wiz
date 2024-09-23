@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIET QuizWiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <style>
+        /* Set the background image for the entire page */
+        body {
+            background-image: url('tiet-5.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+  
+        /* Container for the main content */
+        .content {
+            background-color: rgba(2, 2, 2, 0.6); /* Semi-transparent background */
+            margin: 50px auto; /* Margins around the content */
+            padding: 20px;
+            max-width: 1800px; /* Maximum width of the content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            opacity: 1;
+            color: white;
+            font-family: cursive;
+        }
+  
+        p {
+            line-height: 1.6;
+        }
+    
+        .navbar{
+          background-color:rgb(0, 0, 0,0.6);
+          text-align: right;
+           display: flex;
+           height: 60px;
+        }
+        .container{
+          margin-left: 0px;
+        }
+        
+        .quizContainer {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: black;
+            align-items: center;
+            margin-left: 500px;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar fixed-top">
+        <div class="container-fluid">
+            <img src="TIET-Patiala-Logo.webp" alt="" style="height: 50px;margin-left: 50px;">
+          <h1 style=" color: white; text-align: left; font-family:fantasy; height: 50px;margin-left: 1500px;">
+            TIET QuizWiz
+        </h1>
+        <br><br>
+        </div>
+      </nav>
+      <br><br><br>
+      <div class="content">
+        <h1><u>Humanities for Engineers</u></h1>
+        <br>
+        <h3><u>Subject Code : UHU005</u></h3>
+        <br>
+        <p><u>Topics covered in quiz:  </u> Values Introduction, Value Spectrum for a Good Life, Moral and Ethical Values, Kohlberg's Theory of Moral Development, Creativity, Professional Ethics, Whistle-blowing, Corporate Social Responsibility
+
+        </p>
+        
+          <div class="container mt-5" >
+            <button id="randomQuizButton" class="btn btn-primary mb-3">Generate Quiz</button>
+            <div id="quizContainer" class="mb-3"></div>
+            <button id="downloadQuizButton" class="btn btn-success" style="display: none;margin-left: 800px;">Download Quiz</button>
+          </div>
+    </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (for Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include jsPDF library -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const quizzes = [
+          {
+            title: "Humanities",
+            content: `<p>1. Which of the following is NOT a branch of Humanities?</p>
+              <p>A. Literature
+              <p>B. History
+              <p>C. Philosophy
+              <p>D. Computer Science
+
+              <p>Answer: D. Computer Science
+            </p>
+
+            <p>2. Which of the following is a sub-discipline of Philosophy?
+              <p>A. Ethics
+                <p>B. Aesthetics
+                  <p>C. Epistemology
+                    <p>D. Metaphysics
+
+                      <p>Answer: C. Epistemology</p>
+
+            <p>3. Which of the following is a type of literary device used to convey a message?
+              <p>A. Symbolism
+                <p>B. Irony
+                  <p>C. Imagery
+                    <p>D. Alliteration
+
+                      <p>Answer: B. Irony</p>
+
+            <p>4. Which of the following is a type of historical research method?
+              <p>A. Oral History
+                <p>B. Archaeology
+                  <p>C. Historical Criticism
+                    <p>D. Social History
+
+                      <p>Answer: C. Historical Criticism</p>
+
+            <p>5. Which of the following is a type of philosophical theory?
+              <p>A. Utilitarianism
+                <p>B. Virtue Ethics
+                  <p>C. Deontology
+                    <p>D. Existentialism
+
+                      <p>Answer: B. Virtue Ethics</p>
+            </p>`
+          }
+        ];
+        const randomQuizButton = document.getElementById('randomQuizButton');
+        const quizContainer = document.getElementById('quizContainer');
+        const downloadQuizButton = document.getElementById('downloadQuizButton');
+        randomQuizButton.addEventListener('click', function() {
+          const randomQuiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+          quizContainer.innerHTML = `<h2>${randomQuiz.title}</h2>${randomQuiz.content}`;
+          quizContainer.classList.add('quizContainer');  // Add class to show white background
+          downloadQuizButton.style.display = 'block';
+          downloadQuizButton.dataset.quizTitle = randomQuiz.title;
+          downloadQuizButton.dataset.quizContent = randomQuiz.content.replace(/<\/?p>/g, '\n');
+        });
+        downloadQuizButton.addEventListener('click', function() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+          const title = downloadQuizButton.dataset.quizTitle;
+          const content = downloadQuizButton.dataset.quizContent;
+          const lines = doc.splitTextToSize(content, 180); // Split the content into lines that fit the page width
+          let y = 20;
+          doc.setFontSize(18);
+          doc.text(title, 10, 10);
+          doc.setFontSize(15);
+          lines.forEach(line => {
+            if (y > 270) { // Check if the current y position is near the bottom of the page
+              doc.addPage(); // Add a new page
+              y = 10; // Reset y position for the new page
+            }
+            doc.text(line, 10, y);
+            y += 10; // Increment y position for the next line
+          });
+          doc.save('quiz.pdf');
+        });
+      });
+    </script>
+  </body>
+</html>

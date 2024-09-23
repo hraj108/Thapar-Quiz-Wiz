@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIET QuizWiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <style>
+        /* Set the background image for the entire page */
+        body {
+            background-image: url('tiet-5.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+  
+        /* Container for the main content */
+        .content {
+            background-color: rgba(2, 2, 2, 0.6); /* Semi-transparent background */
+            margin: 50px auto; /* Margins around the content */
+            padding: 20px;
+            max-width: 1800px; /* Maximum width of the content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            opacity: 1;
+            color: white;
+            font-family: cursive;
+        }
+  
+        p {
+            line-height: 1.6;
+        }
+    
+        .navbar {
+            background-color: rgb(0, 0, 0, 0.6);
+            text-align: right;
+            display: flex;
+            height: 60px;
+        }
+        .container {
+            margin-left: 0px;
+        }
+        
+        .quizContainer {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: black;
+            margin-left: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar fixed-top">
+        <div class="container-fluid">
+            <img src="TIET-Patiala-Logo.webp" alt="" style="height: 50px; margin-left: 50px;">
+            <h1 style="color: white; text-align: left; font-family: fantasy; height: 50px; margin-left: 1500px;">
+                TIET QuizWiz
+            </h1>
+            <br><br>
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="content">
+        <h1><u>Operating Systems</u></h1>
+        <br>
+        <h3><u>Subject Code : UCS303</u></h3>
+        <br>
+        
+        <p><u>Topics covered in quiz:  </u> System Structure, System Processes, Threads, Process Synchronization, CPU Scheduling, Deadlock, Main Memory, Virtual Memory, Mass Storage, File System Interface</p>
+
+        <div class="container mt-5">
+            <button id="randomQuizButton" class="btn btn-primary mb-3">Generate Quiz</button>
+            <div id="quizContainer" class="mb-3"></div>
+            <button id="downloadQuizButton" class="btn btn-success" style="display: none; margin-left: 800px;">Download Quiz</button>
+        </div>
+    </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (for Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include jsPDF library -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const quizzes = [
+          {
+            title: "Operating Systems",
+            content: `<p>
+Question 1: What is the primary goal of an operating system?
+<p>A) To provide a platform for application software
+<p>B) To manage computer hardware resources
+<p>C) To provide a user interface for users
+<p>D) To provide a platform for system software
+
+<p>Answer: B) To manage computer hardware resources</p>
+
+<p>Question 2: What is the term for the process of allocating resources to processes?
+<p>A) Resource allocation
+<p>B) Process scheduling
+<p>C) Memory management
+<p>D) Job scheduling
+
+<p>Answer: B) Process scheduling</p>
+
+<p>Question 3: What is the term for the process of dividing a large program into smaller parts?
+<p>A) Compilation
+<p>B) Linking
+<p>C) Loading
+<p>D) Segmentation
+
+<p>Answer: B) Linking</p>
+
+<p>Question 4: What is the term for the process of managing the memory of a computer system?
+<p>A) Memory management
+<p>B) Process scheduling
+<p>C) Resource allocation
+<p>D) Job scheduling
+
+<p>Answer: A) Memory management</p></p>`
+          }
+        ];
+        const randomQuizButton = document.getElementById('randomQuizButton');
+        const quizContainer = document.getElementById('quizContainer');
+        const downloadQuizButton = document.getElementById('downloadQuizButton');
+        randomQuizButton.addEventListener('click', function() {
+          const randomQuiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+          quizContainer.innerHTML = `<h2>${randomQuiz.title}</h2>${randomQuiz.content}`;
+          quizContainer.classList.add('quizContainer');  // Add class to show white background
+          downloadQuizButton.style.display = 'block';
+          downloadQuizButton.dataset.quizTitle = randomQuiz.title;
+          downloadQuizButton.dataset.quizContent = randomQuiz.content.replace(/<\/?p>/g, '\n');
+        });
+        downloadQuizButton.addEventListener('click', function() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+          const title = downloadQuizButton.dataset.quizTitle;
+          const content = downloadQuizButton.dataset.quizContent;
+          const lines = doc.splitTextToSize(content, 180); // Split the content into lines that fit the page width
+          let y = 20;
+          doc.setFontSize(18);
+          doc.text(title, 10, 10);
+          doc.setFontSize(15);
+          lines.forEach(line => {
+            if (y > 270) { // Check if the current y position is near the bottom of the page
+              doc.addPage(); // Add a new page
+              y = 10; // Reset y position for the new page
+            }
+            doc.text(line, 10, y);
+            y += 10; // Increment y position for the next line
+          });
+          doc.save('quiz.pdf');
+        });
+      });
+    </script>
+  </body>
+</html>

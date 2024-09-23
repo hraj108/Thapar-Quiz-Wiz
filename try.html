@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<div id="quiz-content">
+    <h1>Quiz</h1>
+    <p>1. What is the capital of France?</p>
+    <p>a) Berlin</p>
+    <p>b) Madrid</p>
+    <p>c) Paris</p>
+    <p>d) Rome</p>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <button onclick="generatePDF()">Download Quiz as PDF</button>
+</div>
+
+<script>
+  async function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const quizContent = document.getElementById('quiz-content');
+
+      // Use html2canvas to capture the content as a canvas
+      html2canvas(quizContent).then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          const imgProps = doc.getImageProperties(imgData);
+          const pdfWidth = doc.internal.pageSize.getWidth();
+          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+          // Add the image to the PDF
+          doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+          doc.save('quiz.pdf');
+      });
+  }
+</script>
+</body>
+</html>

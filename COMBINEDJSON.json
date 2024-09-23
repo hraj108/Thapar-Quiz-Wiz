@@ -1,0 +1,1326 @@
+[
+  {
+    "question": "What is artificial intelligence?",
+    "answer": "Artificial intelligence (AI) refers to the science and engineering of making intelligent machines."
+  },
+  {
+    "question": "When was the term AI coined?",
+    "answer": "The term 'AI' was coined in 1956 by John McCarthy at a Dartmouth conference."
+  },
+  {
+    "question": "What is weak AI?",
+    "answer": "Weak AI, also known as Artificial Narrow Intelligence (ANI), refers to machines that have limited range of abilities and can only accomplish specific problems."
+  },
+  {
+    "question": "Who developed the first industrial robot in 1961?",
+    "answer": "George Devol developed the first industrial robot, Unimate, in 1961."
+  },
+  {
+    "question": "What is strong AI?",
+    "answer": "Strong AI, also known as Artificial General Intelligence (AGI), refers to machines that can think and accomplish complex tasks on their own, at a level comparable to humans."
+  },
+  {
+    "question": "When did IBM Deep Blue win the chess championship?",
+    "answer": "IBM Deep Blue won the chess championship in 1997."
+  },
+  {
+    "question": "What is cognitive science?",
+    "answer": "Cognitive science is an interdisciplinary field that brings together models from AI and experimental techniques from psychology to construct precise and testable theories of the workings of minds."
+  },
+  {
+    "question": "When was Sophia, a social robot, developed?",
+    "answer": "Sophia, a social robot, was developed in 2016 by Hanson Robotics."
+  },
+  {
+    "question": "What is an agent?",
+    "answer": "An agent is anything that can perceive its environment through sensors and acting upon its environment through actuators."
+  },
+  {
+    "question": "How do human agents sense their environment?",
+    "answer": "Human agents have eyes, ears, and other organs for sensors; hands, legs, mouth, and other body parts for actuators"
+  },
+  {
+    "question": "What is a percept sequence in the context of an agent?",
+    "answer": "A complete history of perceived inputs at any given instant."
+  },
+  {
+    "question": "How does an agent's choice of action depend on its percept sequence?",
+    "answer": "An agent's choice of action at any given instant can depend on the entire percept sequence observed to date."
+  },
+  {
+    "question": "What is a performance measure in the context of an agent?",
+    "answer": "A general rule to design performance according to what one actually wants in the environment, rather than how one thinks the agent should behave"
+  },
+  {
+    "question": "How does rationality depend on four things?",
+    "answer": "Rationality depends on: The performance measure defining the criterion of success; The agent's prior knowledge of the environment; The actions that the agent can perform; and The agent's percept sequence up to now."
+  },
+  {
+    "question": "What are the four parameters used to specify a task environment?",
+    "answer": "The four parameters used to specify a task environment are: Performance, Environment, Actuators, Sensors (PEAS specification)"
+  },
+  {
+    "question": "How does an agent's rationality work in terms of selecting actions?",
+    "answer": "A rational agent should select an action expected to maximize its performance measure, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has"
+  },
+  
+  {
+    "question": "What is search space in AI?",
+    "answer": "Search space represents a set of possible solutions, which a problem may have."
+  },
+  {
+    "question": "What are the three main factors of a search problem?",
+    "answer": "The three main factors are: Search Space, Start State, and Goal test"
+  },
+  {
+    "question": "What is a solution to a search problem?",
+    "answer": "A sequence of actions, called the plan that transforms the start state to the goal state."
+  },
+  {
+    "question": "What is an optimal solution in AI?",
+    "answer": "If a solution has the lowest cost among all solutions"
+  },
+  {
+    "question": "What are the properties of search algorithms?",
+    "answer": "Completeness, Optimality, Time Complexity, and Space Complexity"
+  },
+  {
+    "question": "What is uninformed or blind search in AI?",
+    "answer": "Searching without information; no knowledge; time consuming; more complexity (time, space)"
+  },
+  {
+    "question": "Why might we use a blind search algorithm when there may be built-in intelligence available?",
+    "answer": "There may not be any information we can use"
+  },
+  {
+    "question": "What is the basic state space tree search algorithm in AI?",
+    "answer": "OPEN = List of generated but unexplored states; initially containing initial state, CLOSED = List of explored nodes; initially empty, and an algorithm that loops until OPEN is empty or success is returned"
+  },
+  {
+    "question": "What is informed search?",
+    "answer": "Informed search refers to searching with information or knowledge to find steps to the solution, which leads to a quick solution and less complexity."
+  },
+  {
+    "question": "What are heuristic functions in searching?",
+    "answer": "Heuristic functions are user-defined functions that estimate the cost or distance to the goal state from the current state. They guide the search by exploring regions leading to the goal."
+  },
+  {
+    "question": "How do you decide a heuristic function for a problem?",
+    "answer": "The heuristic function is decided based on average branching factor, which is computed as follows: Ideal value of this factor is 1 and maximum value for a particular problem is known (such as 4 for 8-puzzle problem)."
+  },
+  {
+    "question": "What are the types of informed searching algorithms?",
+    "answer": "The various types of informed searching algorithms include Best First Search, Hill Climbing, Beam Search, A* Searching, and Iterative Deepening A* Searching."
+  },
+  {
+    "question": "How does Best First Search work?",
+    "answer": "Best First Search picks the most promising node (in terms of heuristic value) from the OPEN list in every iteration until the goal node is found. It maintains the OPEN list as a priority queue sorted on the heuristic value."
+  },
+  {
+    "question": "What are some examples of heuristic functions?",
+    "answer": "Some examples of heuristic functions include Euclidean distance, Manhattan distance, and Minkowski distance for route finding problems, and number of misplaced tiles or correctly placed tiles in an 8-puzzle problem."
+  },
+  {
+    "question": "How do heuristic functions improve searching efficiency?",
+    "answer": "Heuristic functions can guide the search direction but overlook excellent paths or points of interest. On average they find good solutions (not possibly optimal) for hard problems in exponential time."
+  },
+  {
+    "question": "What is the most widely used form of best-first search?",
+    "answer": "A* algorithm"
+  },
+  {
+    "question": "What is f(n) in A* algorithm?",
+    "answer": "f(n) = g(n) + h(n)"
+  },
+  {
+    "question": "What does g(n) represent in A* algorithm?",
+    "answer": "The actual cost to reach the node n from starting state through some known path"
+  },
+  {
+    "question": "What is h(n) in A* algorithm?",
+    "answer": "Estimated distance of the node n from goal node (computed using heuristic function)"
+  },
+  {
+    "question": "When does g(н) change in A* algorithm?",
+    "answer": "As more and more paths are learnt, this cost will keep on changing"
+  },
+  {
+    "question": "What is the necessary condition for A* algorithm to be optimal?",
+    "answer": "The branching factor of the search space should be finite. The cost to move from one node to another should be greater than or equal to zero."
+  },
+  {
+    "question": "What does an admissible heuristic mean in A* algorithm?",
+    "answer": "A heuristic that always underestimates the cost to reach the goal"
+  },
+  {
+    "question": "Which of the two heuristics (Heuristic 1 and Heuristic 2) is admissible in Example I?",
+    "answer": "Heuristic 2"
+  },
+  {
+    "question": "What type of algorithms use randomized decisions?",
+    "answer": "Stochastic search algorithms"
+  },
+  {
+    "question": "Why do uninformed search algorithms not work well for larger search spaces?",
+    "answer": "Because they suffer from combinatorial explosion and take exponential time to solve the problems."
+  },
+  {
+    "question": "What is the main problem with hill climbing algorithms?",
+    "answer": "They strike into local maxima/minima rather than reaching global maxima or minima."
+  },
+  {
+    "question": "What type of search algorithm can accept a bad move and still escape local maxima/minima?",
+    "answer": "Iterative searching algorithms"
+  },
+  {
+    "question": "Where does the term 'Simulated Annealing' come from?",
+    "answer": "From the process of physical annealing (i.e. controlled cooling) in metallurgy and materials science."
+  },
+  {
+    "question": "What is the purpose of the temperature parameter T in Simulated Annealing?",
+    "answer": "It controls the behavior of the algorithm, making it more like a Random Walk at high temperatures and more like Steepest Hill Climbing at low temperatures."
+  },
+  {
+    "question": "Why does Simulated Annealing make probabilistic moves from one node to another?",
+    "answer": "To allow for moves against the gradient (i.e. worse moves) with some non-zero probability, but with a higher probability of making better moves."
+  },
+  {
+    "question": "What is the main idea behind Simulated Annealing?",
+    "answer": "The algorithm will make moves against the gradient but have a higher probability of making better moves."
+  },
+   {
+    "question": "What is Genetic Algorithm (GA) based searching?",
+    "answer": "It's a technique based on natural selection and genetics, simulating evolution as an optimization problem."
+  },
+  {
+    "question": "How does GA work with encoding of parameter sets?",
+    "answer": "GAs search for a population of points, not single point, using objective function value (fitness function) directly."
+  },
+  {
+    "question": "What are the phases in which Genetic Algorithm works?",
+    "answer": "Initial Population, Calculate fitness function, Apply selection, crossover and mutation operators to generate child populations."
+  },
+  {
+    "question": "What is the purpose of parent selection in GA?",
+    "answer": "Parent selection drives individuals to a better and fitter solution, crucial for convergence rate."
+  },
+  {
+    "question": "What are the two main types of crossover operator in GA?",
+    "answer": "One-point crossover and Multi point crossover"
+  },
+  {
+    "question": "How does Uniform Crossover work in GA?",
+    "answer": "It treats each gene separately, flipping a coin to decide whether or not it'll be included in the off-spring."
+  },
+  {
+    "question": "What is Mutation operator used for in GA?",
+    "answer": "To maintain and introduce diversity in the genetic population"
+  },
+  {
+    "question": "Why does high probability of mutation reduce a GA to random search?",
+    "answer": "Because it gets reduced to a random search if the probability is very high."
+  },
+  {
+    "question": "What is machine learning?",
+    "answer": "Machine learning is a field of artificial intelligence which enables a machine to learn automatically from data and improve its performance with experience."
+  },
+  {
+    "question": "Who defined machine learning as 'a computer program that gives computers the ability to learn without being explicitly programmed'?",
+    "answer": "Arthur Samuel"
+  },
+  {
+    "question": "What is an example of a task in machine learning?",
+    "answer": "Suppose you have a child who needs to find which shape goes into which hole. The performance measure (P) might be the accuracy, and experience (E) increases as they repeat the task."
+  },
+  {
+    "question": "What is supervised learning?",
+    "answer": "Supervised learning involves training a model using labeled data to make predictions on new, unseen data."
+  },
+  {
+    "question": "What are the three features required for a well-defined machine learning problem?",
+    "answer": "Class of tasks (T), measure of performance to be improved (P), and source of experience (E)"
+  },
+  {
+    "question": "What is regression in supervised learning?",
+    "answer": "Regression is a type of learning that involves predicting continuous output features."
+  },
+  {
+    "question": "What is clustering in unsupervised learning?",
+    "answer": "Clustering applies machine learning to group data based on different patterns found by the model, such as K-Means"
+  },
+  {
+    "question": "What type of classification problem involves more than two classes?",
+    "answer": "Multiclass classification"
+  },
+   {
+    "question": "What is unstructured data?",
+    "answer": "Unstructured data is information that has not been structured in a predefined manner."
+  },
+  {
+    "question": "What is an example of semi-structured data?",
+    "answer": "An example of semi-structured data is e-mail, which can be easily broken into its individual groups but the data within these groups is itself unstructured."
+  },
+  {
+    "question": "What type of feature has non-numerical values and cannot be measured?",
+    "answer": "Qualitative or categorical features have non-numerical values and cannot be measured. Examples include gender (male or female)."
+  },
+  {
+    "question": "What is an example of a continuous feature?",
+    "answer": "An example of a continuous feature is the price of a house, which can take any value on a scale."
+  },
+  {
+    "question": "What type of dataset has approximately equal positive and negative values?",
+    "answer": "A balanced dataset has approximately equal positive and negative values."
+  },
+   {
+    "question": "What is the principle behind building machine learning models?",
+    "answer": "The constructive feedback principle"
+  },
+  {
+    "question": "What does R2 measure in a regression model?",
+    "answer": "It measures the proportion of variance of the dependent variable explained by the regression model."
+  },
+  {
+    "question": "How is accuracy calculated for classification models?",
+    "answer": "As percentage deviation of predicted target with actual target (with or without acceptable error)"
+  },
+  {
+    "question": "What are the four types of errors in a confusion matrix?",
+    "answer": "True Positive, True Negative, False Positive and False Negative"
+  },
+  {
+    "question": "How is precision calculated for class C1?",
+    "answer": "As number of instances that were predicted to belong to class C1 actually belonging to class C1 divided by total instances predicted as class C1."
+  },
+  {
+    "question": "What does sensitivity or recall measure in a classification model?",
+    "answer": "The proportion of positive data points correctly considered as positive with respect to all positive data points"
+  },
+  {
+    "question": "How is F Score calculated?",
+    "answer": "As the harmonic mean of precision and recall, defined as (2*precision*recall) / (precision + recall)"
+  },
+  {
+    "question": "What does a high TPR and low FNR indicate in a classification model?",
+    "answer": "It indicates correctly classifying most positive instances with few false negatives"
+  },
+   {
+    "question": "What is K-Nearest Neighbor?",
+    "answer": "K-Nearest Neighbor is a Supervised Learning technique that assumes similarities between new data and available data, placing the new data in the category most similar to the available data."
+  },
+  {
+    "question": "Is KNN used for Regression or Classification problems?",
+    "answer": "KNN can be used for both Regression and Classification but is often used for Classification problems."
+  },
+  {
+    "question": "What type of learner is K-Nearest Neighbor?",
+    "answer": "K-Nearest Neighbor is a non-parametric, lazy learner that does not make any assumption on underlying data and stores the dataset until it gets new data to classify."
+  },
+  {
+    "question": "How does KNN perform classification?",
+    "answer": "Classification in KNN is done by a majority vote among its neighbors. The test data is assigned to the class of its K nearest neighbors."
+  },
+  {
+    "question": "What distance measure can be used in K-Nearest Neighbor algorithm?",
+    "answer": "Euclidean Distance, Manhattan Distance, and Chebyshev Distance are some examples of distances that can be used in the K-Nearest Neighbor algorithm."
+  },
+  
+  {
+    "question": "What is knowledge?",
+    "answer": "Knowledge is the collection of facts, information, and skills acquired through experience or training or education."
+  },
+  {
+    "question": "What does reasoning mean?",
+    "answer": "Reasoning means processing of knowledge."
+  },
+  {
+    "question": "How do humans understand and interpret knowledge?",
+    "answer": "Humans are capable to understand, and interpret the knowledge. As per their knowledge, they perform various actions in the real world."
+  },
+  {
+    "question": "What is declarative knowledge?",
+    "answer": "Declarative knowledge is to know about something like concepts, facts, and objects. It is also called descriptive knowledge and expressed in declarative sentences."
+  },
+  {
+    "question": "What is procedural knowledge?",
+    "answer": "Procedural knowledge involves knowing how to do something. It can be directly applied to any task."
+  },
+  {
+    "question": "What is meta-knowledge?",
+    "answer": "Knowledge about the knowledge is called Meta-knowledge. It is used to describe things such as tags, models and taxonomies that describe knowledge."
+  },
+  {
+    "question": "How does structural knowledge relate to problem-solving?",
+    "answer": "Structural knowledge describes relationships between various concepts such as kind of, part of, and grouping of something. It describes the relationship that exists between concepts and objects."
+  },
+  {
+    "question": "What is the cycle of knowledge?",
+    "answer": "The cycle of knowledge includes Perception component: Using this, AI agent retrieves information from its environment; The learning component is responsible for learning from data captured by Perception component; Knowledge representation and Reasoning: These components are involved in showing the intelligence in machine-like humans."
+  },
+   {
+    "question": "What is probabilistic reasoning?",
+    "answer": "Probabilistic reasoning is a way of knowledge representation where we apply the concept of probability to indicate the uncertainty in knowledge."
+  },
+  {
+    "question": "Are independent events affected by previous events?",
+    "answer": "No, each event is not affected by any other events. Each toss of a coin is an example of an Independent Event."
+  },
+  {
+    "question": "What are the chances of getting a red ball if we take one out from a bag containing 2 blue and 3 red balls?",
+    "answer": "The chance is 3 in 5, but after taking one ball out, the chances change!"
+  },
+  {
+    "question": "Do events remain independent when replacing the ball in the bag each time?",
+    "answer": "Yes, with replacement: the events are Independent (the chances don't change)"
+  },
+  {
+    "question": "What is the probability of drawing two blue balls from a deck given that we drew one Queen first?",
+    "answer": "P(A and B) = P(A) x P(B|A) = (4/52) x (3/51) = 12/2652 = 1/221"
+  },
+  {
+    "question": "What is the formula for conditional probability?",
+    "answer": "P(conditional event | independent event) = P(independent event ∩ dependent event) / P(independent event)"
+  },
+  {
+    "question": "What does 'P(B|A)' represent in probabilistic reasoning?",
+    "answer": "'P(B|A)' means the probability of event B given that event A has already happened."
+  },
+  {
+    "question": "Can we use tree diagrams to answer questions about dependent events?",
+    "answer": "Yes, we can go one step further and see what happens when we pick a second ball using Tree Diagrams"
+  },
+   {
+    "question": "What is probabilistic reasoning?",
+    "answer": "Probabilistic reasoning is a way of knowledge representation where we apply the concept of probability to indicate the uncertainty in knowledge."
+  },
+  {
+    "question": "Are independent events affected by previous events?",
+    "answer": "No, each event is not affected by any other events. Each toss of a coin is an example of an Independent Event."
+  },
+  {
+    "question": "What are the chances of getting a red ball if we have taken one out already?",
+    "answer": "If we got a blue ball before, then the chance of a blue ball next is 2 in 4. If we got a red ball before, then the chance of a red ball next is 1 in 4."
+  },
+  {
+    "question": "Do events change if we replace the ball each time?",
+    "answer": "Yes, with replacement: the events are Independent (the chances don't change). Without Replacement: the events are Dependent (the chances change)"
+  },
+  {
+    "question": "What is the probability of drawing two blue balls from a bag?",
+    "answer": "It's a 2/5 chance followed by a 1/4 chance, which gives us P(And B) = P(A) x P(B|A) = (2/5) x (3/51) = 12/2652 = 1/221"
+  },
+  {
+    "question": "What is the formula for conditional probability?",
+    "answer": "P(B|A) = P(A ∩ B) / P(A) when P(A)>0"
+  },
+  {
+    "question": "What does P(And B) represent in the context of drawing two Queens from a deck?",
+    "answer": "It represents the probability that we draw both a Queen first and then another Queen."
+  },
+  {
+    "question": "What is conditional probability?",
+    "answer": "Conditional Probability is defined as the likelihood of occurrence of an event, based on the occurrence of some other event. It's represented as P(B|A), which means 'Probability of event B given event A'."
+  },
+   {
+    "question": "What is an expert system?",
+    "answer": "A computer system that emulates, or acts in all respects, with the decision-making capabilities of a human expert."
+  },
+  {
+    "question": "Who defined what an expert system is?",
+    "answer": "Professor Edward Feigenbaum from Stanford University"
+  },
+  {
+    "question": "What are some advantages of using an expert system?",
+    "answer": "Expert systems never rely on mood and stress, providing greater reliability. They are available 24/7, can be duplicated easily, and accept commands in natural language."
+  },
+  {
+    "question": "Can expert systems explain their reasoning or suggested decisions?",
+    "answer": "Yes, they can"
+  },
+  {
+    "question": "What is the purpose of an inference engine in an expert system?",
+    "answer": "It seeks information and relationships from the knowledge base and provides answers, predictions, and suggestions in the way a human expert would."
+  },
+  {
+    "question": "Where is Love Canal located?",
+    "answer": "Love Canal is a section of Niagara Falls, NY near the Niagara river."
+  },
+  {
+    "question": "What was Love Canal originally intended for?",
+    "answer": "The canal was part of a larger vision of William Love, who in 1892 dug up the area to allow water to flow through Niagara and produce a sprawling industrial city."
+  },
+  {
+    "question": "Why did Hooker Chemical stop dumping chemicals at Love Canal?",
+    "answer": "Hooker stopped dumping chemicals in 1952 and covered it with dirt."
+  },
+  {
+    "question": "What was the result of the chemical contamination at Love Canal?",
+    "answer": "Residents began to notice chemicals leeching into their basements, including benzene, a serious health risk, as well as other chemicals such as chloroform."
+  },
+  {
+    "question": "How did the government respond to the crisis at Love Canal?",
+    "answer": "The government paid to move inner ring houses or the closest to the ditch to new homes and remediated and capped the canal so no chemical would leach out, while also evacuating remaining residents after two years of constant demonstrations and health studies."
+  },
+  {
+    "question": "What was the primary reason for the construction of a new school on top of the Love Canal?",
+    "answer": "The School Board of Niagara approached Hooker Chemical to sell the patch of land in and around Love Canal for a new school and a park."
+  },
+  {
+    "question": "Why did residents begin to notice chemicals leeching into their basements during an unusually rainy year?",
+    "answer": "Niagara Falls has a very high water table, which caused the chemicals from the dump to seep up through the soil and into residential areas."
+  },
+  {
+    "question": "What was one of the most serious health risks found in the basements of nearby homes?",
+    "answer": "Benzenehexachlorides were a major concern due to their potential impact on human health."
+  },
+  {
+    "question": "How did the government initially respond to the crisis at Love Canal?",
+    "answer": "The government paid for the relocation of inner ring houses closest to the ditch, but left outer rings unaffected until later protests and studies led to further evacuations."
+  },
+  {
+    "question": "What was one major outcome of the Love Canal disaster?",
+    "answer": "Congress drew on information from the Love Canal case when it debated and passed CERCLA (Comprehensive Emergency Response, Compensation and Liability Act), also known as the 'Superfund' Act."
+  },
+  {
+    "question": "What is the primary objective of a screen unit operation?",
+    "answer": "Removal of coarse and fine objects, which may get entangled in mechanical equipment"
+  },
+  {
+    "question": "Why is grit removal necessary in wastewater treatment plants?",
+    "answer": "To protect moving mechanical equipment and pump elements"
+  },
+  {
+    "question": "What percentage of suspended solids can be removed through plain sedimentation tank?",
+    "answer": "60-65%"
+  },
+  {
+    "question": "What type of reactions involve the addition/removal of oxygen/hydrogen in enzymatic reactions?",
+    "answer": "Redox reactions"
+  },
+  {
+    "question": "What is an ASP (Activated Sludge Process)?",
+    "answer": "An aerobic, continuous flow treatment system that uses sludge with active populations of microorganisms to breakdown organic matter in wastewater"
+  },
+  {
+    "question": "What is water pollution?",
+    "answer": "The contamination of water bodies, usually as a result of human activities"
+  },
+  {
+    "question": "What are some examples of point sources of water pollution?",
+    "answer": "Single large sources such as industrial facilities or sewage treatment plants"
+  },
+  {
+    "question": "What is eutrophication?",
+    "answer": "Excessive nutrients (nitrogen, phosphorous) leading to too much aquatic plant growth"
+  },
+  {
+    "question": "Why is dissolved oxygen (DO) an important measure of water quality?",
+    "answer": "Because it measures the amount of gaseous oxygen (O2) dissolved in an aqueous solution and indicates stress on aquatic life when levels drop below 5 mg/l"
+  },
+  {
+    "question": "What are some categories of pollutants that can contaminate water bodies?",
+    "answer": "Metals, organics, pathogens, agrochemicals, and other chemicals"
+  },
+  {
+    "question": "What is solid waste?",
+    "answer": "Solid material possessing a negative economic value – it is cheaper to discard than to use."
+  },
+  {
+    "question": "What are some sources of municipal solid waste (MSW)?",
+    "answer": "Residential, Commercial, Institutional, Construction and demolition, Municipal services, Treatment plant sites, Industrial, Agricultural, Biomedical waste"
+  },
+  {
+    "question": "What are the major discards in MSW?",
+    "answer": "Paper, Plastics, Rubble and dust, Glass, Metals, Biodegradable organics, Hazardous organics"
+  },
+  {
+    "question": "How can industrial solid waste be categorized?",
+    "answer": "Hazardous and Non-hazardous waste; characteristics include Corrosivity, Flammability, Reactivity, Toxicity"
+  },
+  {
+    "question": "What are the categories of MSW based on combustibility, compostability, and recyclability?",
+    "answer": "Combustible, Compostable and Recyclable (Newspaper, Cardboard), Recyclable and Combustible (PET bottles, HDPE, etc.), Recyclable only (Aluminium beverage cans, food containers)"
+  },
+  {
+    "question": "What is incineration?",
+    "answer": "Incineration is defined as controlled burning of solid, liquid or gaseous wastes."
+  },
+  {
+    "question": "Why is volume reduction a primary purpose of incineration?",
+    "answer": "The primary purpose of the incineration is volume reduction. Practically 50-60% of volume reduction can be achieved with incineration."
+  },
+  {
+    "question": "What are some problematic components of incineration?",
+    "answer": "Particulate dust, sulphur and nitrogen oxides, chlorine compounds, hydrocarbons are some problematic components of incineration."
+  },
+  {
+    "question": "How efficient is heat recovery from MSW incineration?",
+    "answer": "Heat recovery efficiency is around 70% in MSW incineration."
+  },
+  {
+    "question": "What factors influence complete combustion during incineration?",
+    "answer": "Temperature, time and turbulence are the three main factors that influence complete combustion during incineration."
+  },
+  {
+    "question": "What is electronic waste?",
+    "answer": "Electronic waste, also known as 'e-waste' or 'Waste Electrical and Electronic Equipment' (WEEE), is a type of waste consisting of any broken or unwanted electrical or electronic appliance."
+  },
+  {
+    "question": "Where does most e-waste come from?",
+    "answer": "Most e-waste comes from government, public, and private sector discards, which account for over 70% of total e-waste generation."
+  },
+  {
+    "question": "How much e-waste is generated in India every year?",
+    "answer": "According to the report, around 150,000 tons of e-waste are generated in India every year."
+  },
+  {
+    "question": "What hazardous substances can be found in electronic waste?",
+    "answer": "Electronic waste contains several different substances and chemicals, including lead, mercury, arsenic, cadmium, chromium, barium, beryllium, which are toxic and can have adverse impacts on the environment and health if not handled properly."
+  },
+  {
+    "question": "How many mobile phones are discarded every year in Europe?",
+    "answer": "According to estimates, around 105 million mobile phones will be thrown away in Europe every year."
+  },
+  {
+    "question": "What is meteorology concerned with?",
+    "answer": "The description of the transport of pollutants from source to receptor"
+  },
+  {
+    "question": "What depends upon climatic conditions like temperature, pressure, prevailing winds, humidity, etc.?",
+    "answer": "Dispersion"
+  },
+  {
+    "question": "What is Fick's law of diffusion?",
+    "answer": "J= - D * dC/dx (Mass Flux; Diffusivity coefficient; Concentration gradient)"
+  },
+  {
+    "question": "What are the primary meteorological parameters that have a direct impact on turbulence level and air pollutant distribution?",
+    "answer": "Wind speed, wind direction, temperature, atmospheric stability, and mixing height"
+  },
+  {
+    "question": "What is mechanical turbulence caused by?",
+    "answer": "Surface friction producing irregular airflow"
+  },
+   {
+    "question": "What is air pollution?",
+    "answer": "Air pollution is contamination of the indoor or outdoor environment by any chemical, physical or biological agent that modifies the natural characteristics of the atmosphere."
+  },
+  {
+    "question": "How do we know if air quality is poor?",
+    "answer": "We can determine air quality using Air Quality Index (AQI), which relates to health impacts and citizens' exposure to air pollutants. AQI also indicates compliance with National Air Quality Standards, prompts local authorities to take action, guides policy makers, and encourages citizen participation."
+  },
+  {
+    "question": "What are the possible health impacts of poor air quality?",
+    "answer": "Poor air quality can cause breathing discomfort to people on prolonged exposure, respiratory illness in healthy individuals, and serious health impacts for those with lung or heart diseases. AQI categorizes these effects as Good (minimal impact), Satisfactory (minor discomfort), Moderate (breathing discomfort), Poor (prolonged exposure), Very Poor (respiratory illness), and Severe (serious health impacts)."
+  },
+  {
+    "question": "What are the pollutants considered for Air Quality Index and air quality standards?",
+    "answer": "The pollutants considered include SO2, NO2, PM2.5, PM10, O3, CO, Pb, and NH3."
+  },
+  {
+    "question": "How is particulate matter classified by particle size?",
+    "answer": "Particulate matter (PM) is generally classified into three categories: Coarse (>10µm), Fine (2.5-10µm), and Ultrafine (<2.5µm). PM10 refers to particles less than 10 millionths of a meter in diameter, while PM2.5 is a subset of PM10 referring to particles less than 2.5 millionths of a meter."
+  },
+  {
+    "question": "What is one of the first devices used for controlling particulate emission?",
+    "answer": "Gravitational Settling Chamber"
+  },
+  {
+    "question": "How do cyclone separators separate coarse from fine dust particles?",
+    "answer": "By creating a dual vortex, where the main vortex spirals downward and carries most of the coarser dust particles, while the inner vortex spirals upward and carries finer dust particles."
+  },
+  {
+    "question": "What is one advantage of using gravitational settling chambers or cyclones for particulate control?",
+    "answer": "No moving parts, low maintenance costs"
+  },
+  {
+    "question": "Can cyclone separators handle sticky particles with high inter-particulate attraction?",
+    "answer": "No, they cannot."
+  },
+  {
+    "question": "What is a limitation of using cyclones for particulate control when particle size is small (<10 micrometers)?",
+    "answer": "Low collection efficiencies"
+  },
+  {
+    "question": "What is energy?",
+    "answer": "Energy is the ability to do work"
+  },
+  {
+    "question": "What percentage of commercial energy comes from fossil fuels?",
+    "answer": "79%"
+  },
+  {
+    "question": "What are some alternative sources of energy mentioned in the text?",
+    "answer": "Solar, wind, geo-thermal energy and hydroelectricity"
+  },
+  {
+    "question": "How many years' worth of coal reserves does India have?",
+    "answer": "70 billion tonnes (proven reserves)"
+  },
+  {
+    "question": "What percentage of global average per capita energy consumption has increased between 1970-2014?",
+    "answer": "45%"
+  },
+ {
+         "question":  "From where do we get our values?",
+         "answer":   "We can get our values from Revelation, Tradition, Introspection, Culture, Reason, or Interaction."
+     },
+     {
+         "question":  "What are the six major value types in Allport- Vernon Study of Values (SOV)?",
+         "answer":   "The SOV measures personal preferences for theoretical, economic, aesthetic, social, political, and religious values."
+     },
+     {
+         "question":  "What is a Value System?",
+         "answer":   "A value system refers to the hierarchy of values listed in an order that prioritizes the individual's values."
+     },
+     {
+         "question":  "What are Terminal Values according to Rokeach Value Survey (RVS)?",
+         "answer":   "Terminal Values represent goals that individuals would like to achieve during their lifetime, such as True Friendship and Happiness."
+     },
+     {
+         "question":  "Why is it important for a person with proper values not to be afraid of problems?",
+         "answer":   "A person with proper values will expect and accept problems as part of life, without giving unnecessary importance to anything that happens in life."
+     },
+     {
+         "question":  "What do our values and morals reflect?",
+         "answer":   "Our values and morals are a reflection of our spirituality; they shape our character and make up our personality."
+     },
+     {
+         "question":  "Why is it necessary to love one's own values in life?",
+         "answer":   "It will help us build a strong character, leading our life as it should be, for the fulfillment of life's purpose."
+     },
+     {
+         "question":  "What are Instrumental Values according to Rokeach Value Survey (RVS)?",
+         "answer":   "Instrumental Values represent preferable modes of behavior or means of achieving one's Terminal Values, such as Cheerfulness and Ambition."
+     },
+     {
+         "question":  "Why is value education important?",
+         "answer":   "Value education means inculcating the sense of humanism in children, a deep concern for their well-being and that of others and the nation."
+     },
+     {
+         "question":  "Can values influence attitudes and behavior?",
+         "answer":   "Yes, values generally influence attitudes and behavior."
+     },
+	{"question": "What is the definition of moral values?", 
+        "answer": "Moral values are the standards of good and bad, which govern an individual's behavior and choices."},
+
+{"question": "What is customary morality?", 
+"answer": "Customary morality refers to communities having certain commonly agreed norms to regulate the behavior of individuals in society."},
+
+{"question": "How do we acquire moral values?", 
+"answer": "We acquire them unconsciously from the society and family in which we grow up."},
+
+{"question": "What is reflective morality?", 
+"answer": "Reflective morality refers to principles for moral life that should be consistent with other values of life (social, spiritual & aesthetic values)."},
+
+{"question": "What are the three principles of morality according to Kant?", 
+"answer": "The Principle of Universality, The Principle of Humanity as an end in itself, and The Principle of Autonomy."},
+
+{"question": "What is ethics?", 
+"answer": "Ethics refers to moral values or principles that guide our behavior, and inform us whether actions are right or wrong."},
+ {
+    "question": "What is the primary motivation for moral behavior according to Stage 1?",
+    "answer": "Fear of authority and avoidance of punishments"
+  },
+  {
+    "question": "According to Stage 2, what determines a person's moral choice?",
+    "answer": "Satisfying personal needs"
+  },
+  {
+    "question": "What is the dominant sense of right and wrong in the Pre-conventional level?",
+    "answer": "Punishments and rewards"
+  },
+  {
+    "question": "At what stage do people understand that two people may have different perspectives in a situation?",
+    "answer": "Stage 2: The instrumental purpose orientation"
+  },
+  {
+    "question": "What is the primary focus of moral reasoning at Stage 1?",
+    "answer": "Fear of authority and avoidance of punishments, rather than considering others' intentions or consequences"
+  },
+	{
+    "question": "What is creativity according to professor Devaraj?",
+    "answer": "The real root of the present human crisis"
+  },
+  {
+    "question": "What type of creative expression involves poetry, drama, and other forms of literature?",
+    "answer": "Artistic Creativity"
+  },
+  {
+    "question": "Why is creativity essential for industrial and business organizations?",
+    "answer": "Innovation and success in the modern competitive environment"
+  },
+  {
+    "question": "What are five steps involved in the creative process?",
+    "answer": "Problem sensing, Exploration, Incubation, Flash of insight, Verification and application"
+  },
+  {
+    "question": "What is the first step in the creative process according to professor Devaraj?",
+    "answer": "Problem sensing and problem identification"
+  },
+  {
+    "question": "What is a profession?",
+    "answer": "A disciplined group of individuals who adhere to ethical standards."
+  },
+  {
+    "question": "Why do professionals acquire authority over their clients?",
+    "answer": "Because of their specialized knowledge, which creates trust with the clients."
+  },
+  {
+    "question": "What is one way that professional ethics codes create a climate of trust between public and professionals?",
+    "answer": "By informing the public of the ethical concerns of the profession."
+  },
+  {
+    "question": "What motivates professionals to strive for excellence?",
+    "answer": "An abiding sense of responsibility, motivation for service, and enthusiasm for applying knowledge to find innovative solutions."
+  },
+  {
+    "question": "Why do professionals need to update their knowledge regularly?",
+    "answer": "Because advanced professional knowledge creates new areas of specialization and super-specialization."
+  },
+  {
+    "question": "What is whistleblowing?",
+    "answer": "The unauthorized public disclosure of privileged information by an employee to protect the public interest."
+  },
+  {
+    "question": "Why do engineers have a duty to blow the whistle on certain acts or projects?",
+    "answer": "Because they are compelled to protect the health and safety of the public, as per their codes of ethics."
+  },
+  {
+    "question": "What is internal whistleblowing?",
+    "answer": "Internal whistleblowing is when an employee reports wrongdoing within the organization itself."
+  },
+  {
+    "question": "When should whistleblowing be attempted?",
+    "answer": "Whistleblowing should only be attempted if there is a clear and important harm that can be avoided, proximity to report on the problem, capability of success in stopping the harmful activity, and it's a last resort after all other lines of action have been explored."
+  },
+  {
+    "question": "Why are whistleblowers often not honored as heroes by their fellow workers?",
+    "answer": "Because they may be perceived as traitors or someone who has damaged the firm - the working family to which they belong, and others may doubt their loyalty to the employer."
+  },
+  {
+    "question": "What is Corporate Social Responsibility (CSR)?",
+    "answer": "Corporate social responsibility (CSR) is the process by which businesses negotiate their role in society."
+  },
+  {
+    "question": "Is CSR a guarantee of ethical behavior?",
+    "answer": "Although the two are linked in most firms, CSR activities are no guarantee of ethical behavior."
+  },
+  {
+    "question": "What does 'dharmmada' refer to?",
+    "answer": "'Dharmmada' is what Hindus call Corporate Social Responsibility (CSR)."
+  },
+  {
+    "question": "How has the concept of CSR evolved over time?",
+    "answer": "The evolution of CSR includes corporate profit, philanthropy, strategic community investment, good corporate citizenship, and pure self-interest."
+  },
+  {
+    "question": "What is the traditional way of organizing business according to a capitalist view of economy?",
+    "answer": "According to this view, the basic goal of business is profit maximization without moral and social constraints."
+  },
+  {
+    "question": "What is production referred to in economics?",
+    "answer": "Production refers to an economic term that describes the inputs used in the production of goods or services in order to make an economic profit."
+  },
+  {
+    "question": "What are the factors of production include, according to the text?",
+    "answer": "The factors of production include land, labor, capital and entrepreneurship."
+  },
+  {
+    "question": "In what time period can a firm increase its production by increasing both labor and capital?",
+    "answer": "A firm can increase its production by increasing both labor and capital in the long run, as the supply of capital becomes elastic over time."
+  },
+  {
+    "question": "What is assumed to be fixed in the short-run cost function?",
+    "answer": "Capital is assumed to be fixed in the short-run cost function."
+  },
+  {
+    "question": "How does a firm's production function change between the short run and long run?",
+    "answer": "In the short run, a firm can only increase its labor, while in the long run it can employ more of both capital and labor as the supply of capital becomes elastic over time."
+  },
+  {
+    "question": "What is known by the person about him/herself and is also known by others?",
+    "answer": "Open Area/ Public self"
+  },
+  {
+    "question": "What is unknown by the person about him/herself but which others know?",
+    "answer": "Blind Self/ Blind Area"
+  },
+  {
+    "question": "What does the Johari Window model aim to develop in groups?",
+    "answer": "The Open Area for every person"
+  },
+  {
+    "question": "What is unknown by the person about him/herself and is also unknown by others?",
+    "answer": "Unknown Self/ Unknown Area"
+  },
+  {
+    "question": "What are some of the benefits of using the Johari Window model?",
+    "answer": "A simple and useful tool for understanding and training self-awareness, personal development, improving communications, team development and intergroup relationships"
+  },
+  {
+    "question": "What is the focus of the Psychodynamic Perspective?",
+    "answer": "The unconscious mind and its influence over conscious behavior."
+  },
+  {
+    "question": "According to Behavioral Perspective, what drives human action?",
+    "answer": "Performing an action based on the perceived possibility of reward or punishment."
+  },
+  {
+    "question": "What is the main focus of Cognitive Perspective in psychology?",
+    "answer": "The study of how the mind processes information and influences behavior."
+  },
+  {
+    "question": "Which perspective emphasizes the impact of specific social, ethnic, racial, and religious groups on behavior?",
+    "answer": "Sociocultural Perspective"
+  },
+  {
+    "question": "What is the core idea behind Humanistic Perspective in psychology?",
+    "answer": "Healthy people strive to reach their full potential (personally and inter-personally)."
+  },
+  {
+    "question": "What is inflation?",
+    "answer": "Inflation is the percentage change in the value of the Price Index (PI) on a year-on-year basis."
+  },
+  {
+    "question": "What are the two main types of inflation?",
+    "answer": "The two main types of inflation are Demand Pull Inflation and Cost Push Inflation."
+  },
+  {
+    "question": "Is mild inflation good for an economy?",
+    "answer": "Yes, mild inflation is considered to be good for an economy."
+  },
+  {
+    "question": "What is the opposite of hyperinflation?",
+    "answer": "The opposite of hyperinflation is deflation."
+  },
+  {
+    "question": "Why does increasing taxes reduce private spending and control inflation?",
+    "answer": "Increasing taxes reduces private spending by decreasing individuals' total expenditure, which in turn helps to control inflation."
+  },
+  {
+    "question": "What does the quote 'WE DON'T SEE THINGS AS THEY ARE, WE SEE THINGS AS WE ARE' mean?",
+    "answer": "'We don't see things as they are' means that our perception of reality is shaped by our own biases and experiences."
+  },
+  {
+    "question": "What is attribution theory in the context of perception?",
+    "answer": "Attribution theory helps us understand how we attribute causes to events, assess responsibility for outcomes, and evaluate personal qualities based on behavior."
+  },
+  {
+    "question": "What are internal versus external attributions of causes of behavior?",
+    "answer": "Internal attributions refer to behaviors that are under an individual's control, while external attributions refer to factors outside the person's environment that influence their behavior."
+  },
+  {
+    "question": "How do distinctiveness, consensus, and consistency affect internal and external attributions?",
+    "answer": "These three factors - distinctiveness (the degree of repetition in different situations), consensus (whether others exhibit similar behavior), and consistency (behavior over time) - influence how we attribute causes to an individual's behavior."
+  },
+  {
+    "question": "What is the main process involved in perception?",
+    "answer": "The main process involved in perception is organizing and interpreting sensory impressions to give meaning to our environment."
+  },
+  {
+    "question": "What is organizational culture?",
+    "answer": "Organizational culture refers to a system of shared meaning held by members that distinguishes the organization from other organizations."
+  },
+  {
+    "question": "How many dimensions does Hofstede's cultural framework consist of?",
+    "answer": "Hofstede's cultural framework consists of six dimensions: Power distance, Individualism vs. Collectivism, Tolerance of uncertainty or Uncertainty avoidance, Masculinity vs. Femininity, Long-term versus Short-term orientation, and Indulgence versus Restraint."
+  },
+  {
+    "question": "What does a high score on Hofstede's Power Distance Index (PDI) indicate?",
+    "answer": "A high PDI score indicates that a society accepts an unequal, hierarchical distribution of power, and that people understand 'their place' in the system."
+  },
+  {
+    "question": "In what way do individualist societies differ from collectivist societies?",
+    "answer": "Individualist societies have weak interpersonal connections among those who are not part of a core 'family', whereas collectivist societies emphasize loyalty to the group and responsibility for one another's wellbeing."
+  },
+  {
+    "question": "What is organizational behavior defined as?",
+    "answer": "Organizational behavior is the study of the structures and functions of organizations, including the activities of people within them, with the goal of improving an organization's effectiveness."
+  },
+  {
+    "question": "What is emotional intelligence?",
+    "answer": "Emotional intelligence is the ability to understand, use, and manage your own emotions in positive ways to relieve stress, communicate effectively, empathize with others, overcome challenges and defuse conflict."
+  },
+  {
+    "question": "Why is emotional intelligence so important?",
+    "answer": "Having a high level of emotional intelligence allows you to empathize with others, reduce stress, and be both self and socially aware. It's also a key component of compassion and understanding the deeper reasons behind other people's actions."
+  },
+  {
+    "question": "What are the two dimensions of emotional intelligence?",
+    "answer": "Emotional intelligence consists of Two dimensions: Personal Competence (self-awareness, self-management) and Social Competence (social awareness, relationship management)"
+  },
+  {
+    "question": "How does emotional intelligence affect performance at work?",
+    "answer": "Emotional intelligence can help you find the way of the social complexities of the workplace, lead and motivate others, and excel in your career. In fact, when it comes to recruiting job candidates, many companies now view emotional intelligence as being as important as technical ability and require EQ testing before hiring."
+  },
+  {
+    "question": "What is one key component of emotional competence?",
+    "answer": "One key component of emotional competence is the ability to recognize and understand different kinds of our own emotions and feelings, including non-verbal means, facial expressions, unexpressed needs"
+  },
+  {
+    "question": "What is motivation?",
+    "answer": "Motivation is the process that account for an individual's intensity, direction and persistence of effort toward attaining a goal."
+  },
+  {
+    "question": "How does Maslow's hierarchy work?",
+    "answer": "There is a hierarchy of five needs. As each need is substantially satisfied, the next need becomes dominant. Individuals cannot move to the next higher level until all needs at the current (lower) level are satisfied and must move in hierarchical order."
+  },
+  {
+    "question": "What are lower-order needs?",
+    "answer": "Lower-Order needs: needs that are satisfied externally, such as physiological and safety needs."
+  },
+  {
+    "question": "What is self-actualization?",
+    "answer": "Self Actualization: drive to become what one is capable of becoming includes growth, achieving one's potential and self achievement. The highest level need of Human being is that of self- actualization, i.e. 'to become everything one is capable of becoming'."
+  },
+  {
+    "question": "How do needs vary across cultures?",
+    "answer": "Hierarchy of needs differs across cultures."
+  },
+ {
+    "question": "What is an operating system?",
+    "answer": "A program that acts as an intermediary between a user of a computer and the computer hardware"
+  },
+  {
+    "question": "What are the goals of an operating system?",
+    "answer": "Execute user programs, make solving user problems easier, use the computer hardware in an efficient manner, and make the computer system convenient to use."
+  },
+  {
+    "question": "How does a computer system structure work?",
+    "answer": "A computer system can be divided into four components: Hardware (provides basic computing resources), Operating System (controls and coordinates use of hardware among various applications and users), Application Programs (define the ways in which the system resources are used to solve the computing problems of the users), and Users (people, machines, or other computers)."
+  },
+  {
+    "question": "What is an operating system's primary function?",
+    "answer": "An operating system acts as a resource allocator, managing all resources and deciding between conflicting requests for efficient and fair resource use."
+  },
+  {
+    "question": "How does the computer startup process work?",
+    "answer": "The bootstrap program is loaded at power-up or reboot, typically stored in ROM or EPROM. It initializes all aspects of the system, loads the operating system kernel, and starts execution."
+  },
+  {
+    "question": "What is one set of operating-system services that provides functions helpful to users?",
+    "answer": "One set of operating-system services provides functions that are helpful to the user: User interface - Almost all operating systems have a user interface (UI)."
+  },
+  {
+    "question": "What type of error detection does an OS need to be constantly aware of?",
+    "answer": "OS needs to be constantly aware of possible errors. May occur in the CPU and memory hardware, in I/O devices, in user program."
+  },
+  {
+    "question": "What is another set of OS functions that exists for ensuring the efficient operation of the system itself via resource sharing?",
+    "answer": "Another set of OS functions exists for ensuring the efficient operation of the system itself via resource allocation - When multiple users or multiple jobs running concurrently, resources must be allocated to each of them."
+  },
+  {
+    "question": "What is an example of a GUI interface?",
+    "answer": "User-friendly desktop metaphor interface. Usually mouse, keyboard, and monitor. Icons represent files, programs, actions, etc"
+  },
+  {
+    "question": "What are the three most common APIs used to access system calls?",
+    "answer": "Three most common APIs are Win32 API for Windows, POSIX API for POSIX-based systems (including virtually all versions of UNIX, Linux, and Mac OS X), and Java API for the Java virtual machine (JVM)"
+  },
+  
+  {
+    "question": "What is a process?",
+    "answer": "A program in execution; a process must progress in sequential fashion."
+  },
+  {
+    "question": "What are the different states of a process?",
+    "answer": "New, running, waiting, ready, and terminated"
+  },
+  {
+    "question": "What is the purpose of a Process Control Block (PCB)?",
+    "answer": "To store information associated with each process, including its state, program counter, CPU registers, scheduling information, memory-management information, accounting information, and I/O status information."
+  },
+  {
+    "question": "How does a short-term scheduler differ from a long-term scheduler?",
+    "answer": "A short-term scheduler selects which process should be executed next and allocates CPU, while a long-term scheduler selects which processes should be brought into the ready queue. Short-term schedulers are invoked frequently (milliseconds), whereas long-term schedulers are invoked infrequently (seconds or minutes)."
+  },
+  {
+    "question": "What is the purpose of interprocess communication?",
+    "answer": "To enable different processes to communicate with each other, allowing them to share resources and coordinate their actions."
+  },
+  {
+    "question": "What is a thread?",
+    "answer": "A fundamental unit of CPU utilization that forms the basis of multithreaded computer systems."
+  },
+  {
+    "question": "Why do modern applications tend to be multithreaded?",
+    "answer": "To simplify code, increase efficiency and provide responsiveness, resource sharing, economy and scalability benefits."
+  },
+  {
+    "question": "What are the three primary thread libraries mentioned in the text?",
+    "answer": "POSIX Pthreads, Windows threads, Java threads"
+  },
+  {
+    "question": "How does Amdahl's Law relate to adding additional cores to an application with both serial and parallel components?",
+    "answer": "It identifies performance gains from adding additional cores. If the application is 75% parallel/25% serial, moving from 1 to 2 cores results in a speedup of 1.6 times."
+  },
+  {
+    "question": "What are kernel threads?",
+    "answer": "Supported by the Kernel and used for managing user-level threads"
+  },
+  {
+    "question": "What is the main objective of CPU scheduling?",
+    "answer": "To introduce CPU scheduling, which is the basis for multiprogrammed operating systems"
+  },
+  {
+    "question": "What is dispatch latency?",
+    "answer": "The time it takes for the dispatcher to stop one process and start another running"
+  },
+  {
+    "question": "Which scheduling algorithm gives minimum average waiting time for a given set of processes?",
+    "answer": "Shortest-Job-First (SJF) Scheduling"
+  },
+  {
+    "question": "What is aging in priority scheduling?",
+    "answer": "As time progresses, increase the priority of the process to prevent starvation"
+  },
+  {
+    "question": "How does Round Robin (RR) scheduling work?",
+    "answer": "Each process gets a small unit of CPU time (time quantum q), usually 10-100 milliseconds. After this time has elapsed, the process is preempted and added to the end of the ready queue."
+  },
+  {
+    "question": "What is mutual exclusion?",
+    "answer": "Mutual Exclusion: only one process at a time can use a resource"
+  },
+  {
+    "question": "When does deadlock arise?",
+    "answer": "Deadlock arises if four conditions hold simultaneously: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait"
+  },
+  {
+    "question": "What is the purpose of Resource-Allocation Graph?",
+    "answer": "To model a system's resource allocation state to detect deadlocks or potential deadlocks"
+  },
+  {
+    "question": "How does deadlock prevention work?",
+    "answer": "By ensuring that whenever a process requests a resource, it does not hold any other resources; and by requiring processes to request all their needed resources before starting execution"
+  },
+  {
+    "question": "What is the purpose of Deadlock Avoidance?",
+    "answer": "To dynamically examine the system's resource-allocation state to ensure that there can never be a circular-wait condition, preventing deadlocks from occurring"
+  },
+  {
+    "question": "What is the main memory's role in running a program?",
+    "answer": "Program must be brought (from disk) into memory and placed within a process for it to be run."
+  },
+  {
+    "question": "Why do we need hardware support for address maps?",
+    "answer": "Need hardware support for address maps (e.g., base and limit registers)"
+  },
+  {
+    "question": "What is the difference between logical and physical addresses?",
+    "answer": "Logical address – generated by the CPU; also referred to as virtual address. Physical address – address seen by the memory unit."
+  },
+  {
+    "question": "How does dynamic relocation work?",
+    "answer": "Routine is not loaded until it is called, allowing for better memory-space utilization and unused routine never being loaded."
+  },
+  {
+    "question": "What is dynamic linking in computer programming?",
+    "answer": "Dynamic linking –linking postponed until execution time; small piece of code (stub) used to locate the appropriate memory-resident library routine"
+  },
+  {
+    "question": "What is virtual memory?",
+    "answer": "Virtual memory refers to the separation of user logical memory from physical memory, allowing only part of a program to be in memory for execution."
+  },
+  {
+    "question": "Why do we need virtual memory?",
+    "answer": "We need virtual memory because entire programs rarely use their code at the same time. Error codes, unusual routines, and large data structures require less physical memory while running more programs concurrently."
+  },
+  {
+    "question": "What is demand paging?",
+    "answer": "Demand paging brings a page into memory only when it's needed, reducing I/O operations and unnecessary memory usage."
+  },
+  {
+    "question": "How does the MMU (Memory Management Unit) handle virtual addresses?",
+    "answer": "The MMU maps logical to physical addresses by checking the valid-invalid bit in each page table entry. If a page is not in memory, it triggers a page fault and brings the page into memory."
+  },
+  {
+    "question": "What happens when there's a page fault?",
+    "answer": "When a page fault occurs, the operating system checks if the reference was invalid or just not in memory. It then swaps out another page to make room for the new one and restarts the instruction that caused the page fault."
+  },
+  {
+    "question": "What is an extreme case of demand paging?",
+    "answer": "An extreme case would be starting a process with no pages in memory, which triggers multiple page faults as each page is brought into memory on first access."
+  },
+  {
+    "question": "Why do we need hardware support for demand paging?",
+    "answer": "We need hardware support for demand paging to handle the additional tasks of maintaining page tables and swapping out/in pages efficiently."
+  },
+  {
+    "question": "What is the performance overhead of demand paging?",
+    "answer": "The performance overhead includes trap to operating system, saving user registers, determining page location on disk, reading from disk, allocating CPU time, and restarting process."
+  },{
+    "question": "How do we measure the effectiveness of demand paging?",
+    "answer": "We can measure the effectiveness by calculating the Page Fault Rate (0 ≤ p ≤ 1) and Effective Access Time (EAT), which takes into account both memory access and page fault overheads."
+  },
+  {
+    "question": "What is the purpose of the valid-invalid bit in each page table entry?",
+    "answer": "The valid-invalid bit indicates whether a page is currently in memory or not. If it's invalid, it triggers a page fault to bring the page into memory."
+  },
+    {
+    "question": "What is the primary source of secondary storage for modern computers?",
+    "answer": "Magnetic disks"
+  },
+  {
+    "question": "How fast do magnetic disk drives rotate?",
+    "answer": "60 to 250 times per second"
+  },
+  {
+    "question": "What happens when a disk head makes contact with the disk surface?",
+    "answer": "A 'head crash' occurs, which is bad"
+  },
+  {
+    "question": "How fast can data transfer between a drive and computer?",
+    "answer": "Transfer rate (theoretical) - 6 Gb/sec; Effective Transfer Rate (real) - 1Gb/sec"
+  },
+  {
+    "question": "What is the average seek time for desktop drives?",
+    "answer": "9ms"
+  },
+  {
+    "question": "When was the first commercial disk drive introduced?",
+    "answer": "1956, with IBM RAMDAC computer and Model 350 disk storage system"
+  },
+  {
+    "question": "What is a solid-state disk (SSD)?",
+    "answer": "Nonvolatile memory used like a hard drive; faster but more expensive per MB"
+  },
+  {
+    "question": "How does magnetic tape store data?",
+    "answer": "Kept in spool and wound or rewound past read-write head, then transferred at rates comparable to disk (140MB/sec and greater)"
+  },
+  {
+    "question": "What is a Storage Area Network (SAN)?",
+    "answer": "Multiple hosts attached to multiple storage arrays via Fibre Channel switches"
+  },
+  {
+    "question": "What is a contiguous logical address space?",
+    "answer": "A file"
+  },
+  {
+    "question": "What types of files can be considered in terms of their contents?",
+    "answer": "Data, numeric, character, and binary"
+  },
+  {
+    "question": "What information about files are kept in the directory structure?",
+    "answer": "Name, identifier, type, location, size, protection, time, date, and user identification"
+  },
+  {
+    "question": "What is an open-file table used for?",
+    "answer": "To track open files"
+  },
+  {
+    "question": "What are the three types of file locks provided by some operating systems and file systems?",
+    "answer": "Shared lock, exclusive lock, and mandatory or advisory lock"
+  },
+  {
+    "question": "Who decides on a file structure?",
+    "answer": "The operating system or program"
+  },
+  {
+    "question": "What is the purpose of an open-file table in managing open files?",
+    "answer": "To track open files and allow removal of data from the table when the last process closes it"
+  },
+  {
+    "question": "Why are file systems organized logically?",
+    "answer": "For efficiency, naming convenience, grouping, and to obtain a directory structure that is easy to navigate"
+  },
+  {
+    "question": "What is a file system?",
+    "answer": "A collection of related information that resides on secondary storage (disks) and provides efficient and convenient access to disk by allowing data to be stored, located, and retrieved easily."
+  },
+  {
+    "question": "How are I/O transfers performed in the file system?",
+    "answer": "I/ O transfers are performed in blocks of sectors (usually 512 bytes)."
+  },
+  {
+    "question": "What is a File Control Block (FCB)?",
+    "answer": "A storage structure consisting of information about a file, including inode number, permissions, size, and dates."
+  },
+  {
+    "question": "How are files organized in the file system?",
+    "answer": "Files are organized into logical blocks that can be translated to physical block numbers using the File Organization Module."
+  },
+  {
+    "question": "What is a mount table?",
+    "answer": "A storage structure containing information about mounted file systems, including their mounts and mount points."
+  },
+  {
+    "question": "How are partitions managed in the file system?",
+    "answer": "Partitions can be volumes containing a file system or raw sequences of blocks with no file system. Boot blocks point to boot volumes or boot loaders that contain enough code to load the kernel from the file system."
+  },
+  {
+    "question": "What is contiguous allocation in the file system?",
+    "answer": "Contiguous allocation refers to an allocation method where each file occupies a set of contiguous disk blocks, providing good performance but with potential problems such as finding space for files and external fragmentation."
+  },
+  {
+    "question": "How are directory entries implemented in the file system?",
+    "answer": "Directory entries can be implemented using linear lists or hash tables to decrease search time, although collisions may occur if entries have fixed sizes or use chained-overflow methods."
+  },
+  {
+    "question": "What is an Access-right?",
+    "answer": "<object-name, rights-set>"
+  },
+  {
+    "question": "What represents rows in an access matrix?",
+    "answer": "Domains"
+  },
+  {
+    "question": "Who can define the access column for an object?",
+    "answer": "The user who creates the object"
+  },
+  {
+    "question": "What is a special access right that applies to objects?",
+    "answer": "Copy op from Oi to Oj (denoted by \"*\") and Owner of Oi"
+  },
+  {
+    "question": "Who can modify another domain's access rights?",
+    "answer": "The owner of the object or the process in the same domain"
+  },
+  {
+    "question": "What is a benefit of using an Access Matrix design?",
+    "answer": "It separates mechanism from policy"
+  },
+  {
+    "question": "Why might storing an access matrix as a global table be difficult?",
+    "answer": "The table could be large and won't fit in main memory, making it hard to group objects"
+  },
+  {
+    "question": "What is the purpose of each row in an Access Matrix implementation using Option 1 (Global Table)?",
+    "answer": "Each row represents a capability list for one domain"
+  },
+   {
+    "question": "What is the main goal of security?",
+    "answer": "To ensure that resources used and accessed as intended under all circumstances."
+  },
+  {
+    "question": "What type of attack can be easier to protect against than a malicious one?",
+    "answer": "Accidental misuse"
+  },
+  {
+    "question": "What is the purpose of masquerading in security attacks?",
+    "answer": "To breach authentication and escalate privileges."
+  },
+  {
+    "question": "What type of attack involves intercepting an already-established session to bypass authentication?",
+    "answer": "Session hijacking"
+  },
+  {
+    "question": "Where can too much security be a problem?",
+    "answer": "In the weakest link in the chain"
+  },
+  {
+    "question": "What is a Trojan Horse attack?",
+    "answer": "A code segment that misuses its environment and exploits mechanisms for allowing programs written by users to be executed by other users."
+  },
+  {
+    "question": "How can you detect logic bombs?",
+    "answer": "Not specified in the text"
+  },
+  {
+    "question": "What is a characteristic of polymorphic viruses?",
+    "answer": "They avoid having a virus signature and are designed to evade detection by antivirus software."
+  }
+
+]

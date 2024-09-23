@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
+  <title>Random Quiz Selector</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Random Quiz Selector</h1>
+    <button id="randomQuizButton" class="btn btn-primary mb-3">Show Random Quiz</button>
+    <div id="quizContainer" class="mb-3"></div>
+    <button id="downloadQuizButton" class="btn btn-success" style="display: none;">Download Quiz</button>
+  </div>
+
+
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+  
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  
+  <div class="card" aria-hidden="true">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title placeholder-glow">
+        <span class="placeholder col-6"></span>
+      </h5>
+      <p class="card-text placeholder-glow">
+        <span class="placeholder col-7"></span>
+        <span class="placeholder col-4"></span>
+        <span class="placeholder col-4"></span>
+        <span class="placeholder col-6"></span>
+        <span class="placeholder col-8"></span>
+      </p>
+      <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery (for Bootstrap 4) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const quizzes = [
+        {
+          title: "Quiz 1",
+          content: `<p>Question 1: What is 2 + 2?</p><p>Question 2: What is the capital of France?</p>`
+        },
+        {
+          title: "Quiz 2",
+          content: `<p>Question 1: What is the square root of 16?</p><p>Question 2: Who wrote 'Hamlet'?</p>`
+        },
+        {
+          title: "Quiz 3",
+          content: `<p>Question 1: What is the chemical symbol for water?</p><p>Question 2: Who painted the Mona Lisa?</p>`
+        }
+      ];
+
+      const randomQuizButton = document.getElementById('randomQuizButton');
+      const quizContainer = document.getElementById('quizContainer');
+      const downloadQuizButton = document.getElementById('downloadQuizButton');
+
+      randomQuizButton.addEventListener('click', function() {
+        const randomQuiz = quizzes[Math.floor(Math.random() * quizzes.length)];
+        quizContainer.innerHTML = `<h2>${randomQuiz.title}</h2>${randomQuiz.content}`;
+        downloadQuizButton.style.display = 'block';
+        downloadQuizButton.dataset.quiz = `${randomQuiz.title}\n${randomQuiz.content.replace(/<\/?p>/g, '')}`;
+      });
+
+      downloadQuizButton.addEventListener('click', function() {
+        const blob = new Blob([downloadQuizButton.dataset.quiz], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'quiz.txt';
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+    });
+  </script>
+</body>
+</html>
